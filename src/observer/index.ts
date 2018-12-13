@@ -24,7 +24,7 @@ class Observable<T> {
   }
 }
 
-class Oxymeter extends Observable<Number> {
+class Oximeter extends Observable<Number> {
   public lastReading: Number
   public updateReading(reading): void {
     this.lastReading = reading
@@ -32,13 +32,13 @@ class Oxymeter extends Observable<Number> {
   }
 }
 
-class OxymiterScreen implements IObserver<Number> {
+class OximiterScreen implements IObserver<Number> {
   onNotify(subject: Number) {
     console.log(`draw screen ${subject}`)
   }
 }
 
-class OxymeterBeeper implements IObserver<Number> {
+class OximeterBeeper implements IObserver<Number> {
   onNotify(subject: Number) {
     if (subject > 90) {
       console.log('beep')
@@ -48,12 +48,12 @@ class OxymeterBeeper implements IObserver<Number> {
   }
 }
 
-const oxymeter = new Oxymeter()
-const monitor = new OxymiterScreen()
-const beeper = new OxymeterBeeper()
+const oximeter = new Oximeter()
+const monitor = new OximiterScreen()
+const beeper = new OximeterBeeper()
 
-oxymeter.register(monitor)
-oxymeter.register(beeper)
+oximeter.register(monitor)
+oximeter.register(beeper)
 
-oxymeter.updateReading(98)
-oxymeter.updateReading(68)
+oximeter.updateReading(98)
+oximeter.updateReading(68)
