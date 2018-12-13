@@ -1,0 +1,18 @@
+{
+  "name": "design-patterns-ts",
+  "version": "1.0.0",
+  "description": "Common design patterns done in TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "builder": "tsc && node ./dist/builder",
+    "observer": "tsc && node ./dist/observer",
+    "visitor": "tsc && node ./dist/visitor",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tsc": "^1.20150623.0"
+  }
+}
